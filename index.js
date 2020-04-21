@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res.status(200).send("<h1>Welcome to api TU-Auth</h1><br/>Author : Soycoder")
 });
 
-app.get("/api/auth/", (_req, _res) => {
+app.post("/api/auth/", (_req, _res) => {
   var options = {
     method: "POST",
     hostname: "restapi.tu.ac.th",
