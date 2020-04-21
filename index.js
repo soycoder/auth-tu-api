@@ -21,8 +21,11 @@ app.use(cors());
 app.use(morgan("combined"));
 
 // defining an endpoint to return all ads
+app.get("/", (req, res) => {
+  res.status(200).send("<h1>Welcome to api TU-Auth // author Soycoder</h1>")
+});
+
 app.get("/api/auth/", (_req, _res) => {
-  var data;
   var options = {
     method: "POST",
     hostname: "restapi.tu.ac.th",
