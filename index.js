@@ -4,6 +4,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const https = require("https");
+const PORT = process.env.PORT || 5000
 // defining the Express app
 const app = express();
 
@@ -64,6 +65,6 @@ app.get("/api/auth/", (_req, _res) => {
 });
 
 // starting the server
-app.listen(3001, () => {
-  console.log("listening on port 3001");
+app.listen(PORT, () => {
+  console.log("listening on port ${PORT}");
 });
