@@ -22,7 +22,7 @@ app.use(morgan("combined"));
 
 // defining an endpoint to return all ads
 app.get("/", (req, res) => {
-  res.status(200).send("<h1>Welcome to api TU-Auth // author Soycoder</h1>")
+  res.status(200).send("<h1>Welcome to api TU-Auth</h1><br/>Author : Soycoder")
 });
 
 app.get("/api/auth/", (_req, _res) => {
@@ -69,5 +69,5 @@ app.get("/api/auth/", (_req, _res) => {
 
 // starting the server
 app.listen(PORT, () => {
-  console.log("listening on port ${PORT}");
+  console.log("listening on port " + PORT);
 });
