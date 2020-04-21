@@ -4,7 +4,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const https = require("https");
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 // defining the Express app
 const app = express();
 
@@ -22,7 +22,7 @@ app.use(morgan("combined"));
 
 // defining an endpoint to return all ads
 app.get("/", (req, res) => {
-  res.status(200).send("<h1>Welcome to api TU-Auth</h1><br/>Author : Soycoder")
+  res.status(200).send("<h1>Welcome to api TU-Auth</h1> <br/> <a href=\"https://soycoder.github.io\"><img src=\"https://github.com/soycoder/icon-profile/blob/master/AW-logo/android-chrome-512x512.png?raw=true\"  height=\"100\" width=\"100\"></a> <br/> Author : Soycoder");
 });
 
 app.post("/api/auth/", (_req, _res) => {
@@ -46,8 +46,8 @@ app.post("/api/auth/", (_req, _res) => {
 
     res.on("end", function (chunk) {
       var body = Buffer.concat(chunks);
-      console.log(body.toString());
-      _res.status(200).json(body.toString());
+      // console.log(JSON.parse(body.toString()));
+      _res.status(200).json(JSON.parse(body.toString()));
     });
 
     res.on("error", function (error) {
